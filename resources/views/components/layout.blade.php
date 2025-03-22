@@ -23,6 +23,7 @@
         <div class="min-h-full">
             <div class="pt-5 text-3xl text-center font-bold font-mono tracking-wide text-white bg-sky-600 h-20">
                 <p>To-Do List</p>
+                {{ $header }}
             </div>
 
             <!--<x-nav-link href="/" :active="request()->is('/')">Login</x-nav-link>-->
