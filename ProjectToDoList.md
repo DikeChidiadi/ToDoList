@@ -9,6 +9,3 @@ Key Features:
 User authentication
 Task CRUD (Create, Read, Update, Delete)
 Task categorization
-
-
-I would like to do a completed and uncompleted
