@@ -17,11 +17,17 @@ class LoginController extends Controller
             'password_confirmation' => 'required'
         ]);
 
-    session()->put('inputData', [
-        'username' => $request->input('username'),
-        'password' => $request->input('password')
+        session()->put('inputData', [
+            'username' => $request->input('username'),
+            'password' => $request->input('password')
         ]);
 
-    return redirect('/home');
+        return redirect()->route('home');
+    }
+    
+
+    function home() {
+        $inputData = session('inputData');
+        return view('home', $inputData);
     }
 }
