@@ -139,3 +139,12 @@ Here is the solution:
 
 • If you go to the Terminal and type: ```php artisan serve```. 
   It should work after that.
+
+# Php artisan commands:
+• ```php artisan migration``` -> is for migrating the table that I created
+• ```php artisan make:migration``` -> erstellt eine Migration
+• ```php artisan make:migration create_name_table``` -> so wird eine *table* erstellt
+• ```php artisan make:model name -m``` -> erstellt ein Model
+• ```php artisan migrate``` -> is for migration commands
+• ```php artisan make:controller NameController``` -> is for creating a controller
+• ```php artisan make:controller NameController --model=Name``` -> is for creating a controller and a model
