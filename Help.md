@@ -156,4 +156,4 @@ Here is the solution:
 • ```php artisan make:controller NameController --model=Name``` -> is for creating a controller and a model
 
 # How to know your current php version
-Type this inside your terminal: ```php --version```
+Type this inside your terminal: ```php --version``` or ```php -v```
