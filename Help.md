@@ -79,44 +79,6 @@ Here is the solution:
 
 • If you go to the Terminal and type: ```php artisan serve```. 
   It should work after that.
-  
-  # How to download Tailwind CSS:
-
-• You would need to have Node.js downloaded.
-
-• Create a Project in Laravel.
-
-• Type this: ```npm install tailwindcss @tailwindcss/vite```
-
-• After it finished downloading then you go to tailwind.config.js
-  and type this: ```import tailwindcss from '@tailwindcss/vite'```
-
-• Under ```./resources/css/app.css``` you add this too: 
-```php
-@import "tailwindcss";
-@source "../views";
-```
-
-• DONT DELETE THE LINE THAT HAS @VITE IN IT THAT START WITH IF AND ENDS
-  WITH ENDIF!!!
-
-# After downloading Tailwind CSS, downloading Daisy UI:
-
-• Type this into the terminal: ```npm i daisyui```
-
-• In tailwind.config.js you put this into the plugin: 
-```php
-require('daisyui'),
-```
-
-
-# How to download the latest tailwindcss version?
-
-Type this in the terminal: ```npx @tailwindcss/upgrade```
-
-It will ask: ``` Ok to proceed? (y) ```
-
-After you type ```y``` it will download the latest tailwindcss version.
 
 
 # Php artisan commands:
