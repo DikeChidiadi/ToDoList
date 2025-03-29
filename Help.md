@@ -78,7 +78,9 @@ Here is the solution:
 • Close it and also close Visual Studio Code and reopen it again
 
 • If you go to the Terminal and type: ```php artisan serve```. 
-  It should work after that.# How to download Tailwind CSS:
+  It should work after that.
+  
+  # How to download Tailwind CSS:
 
 • You would need to have Node.js downloaded.
 
