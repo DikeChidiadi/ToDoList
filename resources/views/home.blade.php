@@ -16,43 +16,10 @@
             </ul>
         </div>
 
-        <div class="place-items-center">
-            <div>
-                <div class="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
-                    <table class="table">
-                        <!-- head -->
-                        <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <!-- row 1 -->
-                        <tr>
-                            <th>1</th>
-                            <td>Cy Ganderton</td>
-                            <td>Quality Control Specialist</td>
-                            <td>Blue</td>
-                        </tr>
-                        <!-- row 2 -->
-                        <tr>
-                            <th>2</th>
-                            <td>Hart Hagerty</td>
-                            <td>Desktop Support Technician</td>
-                            <td>Purple</td>
-                        </tr>
-                        <!-- row 3 -->
-                        <tr>
-                            <th>3</th>
-                            <td>Brice Swyre</td>
-                            <td>Tax Accountant</td>
-                            <td>Red</td>
-                        </tr>
-                        </tbody>
-                    </table>
+        <div class="place-items-center flex flex-col border-2 border-gray-300">
+            <div class="flex flex-col border-2 border-gray-300 rounded-full p-6 bg-white shadow-md mt-8 mb-8 w-96">
+                <div class="flex flex-col rounded-full p-6 bg-blue-500 w-10 m-auto" src="{{ asset('img/plus.webp') }}" alt="plus">
+                    
                 </div>
             </div>
         </div>
