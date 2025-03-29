@@ -41,15 +41,25 @@ After you type ```y``` it will download the latest tailwindcss version.
 If this issue shows up:
 
 ```Failed to listen on 127.0.0.1:8000```
+
 ```Failed to listen on 127.0.0.1:8001```
+
 ```Failed to listen on 127.0.0.1:8002```
+
 ```Failed to listen on 127.0.0.1:8003```
+
 ```Failed to listen on 127.0.0.1:8004```
+
 ```Failed to listen on 127.0.0.1:8005```
+
 ```Failed to listen on 127.0.0.1:8006```
+
 ```Failed to listen on 127.0.0.1:8007```
+
 ```Failed to listen on 127.0.0.1:8008```
+
 ```Failed to listen on 127.0.0.1:8009```
+
 ```Failed to listen on 127.0.0.1:8010```
 
 Here is the solution:
