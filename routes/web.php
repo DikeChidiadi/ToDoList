@@ -12,3 +12,5 @@ Route::get('/home', function () {
 });
 
 Route::view('/login', 'login');
+
+Route::post('/home', [LoginController::class, 'home']);
