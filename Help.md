@@ -98,3 +98,9 @@ Here is the solution:
 
 # How to know your current php version
 Type this inside your terminal: ```php --version``` or ```php -v```
+
+# How to make the Database from Laravel appear in HeidiSQL
+
+• You have to go to your models and type ```php artisan migrate```
+
+After it's migrated you open HeidiSQL and the Models you created should appear
