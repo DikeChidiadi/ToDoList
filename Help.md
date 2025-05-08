@@ -121,3 +121,9 @@ Now comes the configuration of MySQL
 • Sample Databases: Tick off the two boxes
 • Apply Configuration: Just press Execute so all will be executed
 
+* In case this error appears:
+* > SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ue4_dike_eventmanager.sessions' doesn't exist (Connection: mysql, SQL: select * from `sessions` where `id` = OOcNcv20Gt9F0KSX7kcrbn6z79Le9DGyjOhsjSmM limit 1)
+
+  You have to open ´´´app\database\migrations´´´ and migrate this table: ´´´create_users_table.php´´´
+  How to migrate → php artisan migrate
+  After you did this you open Herd and the website should be visiable.
