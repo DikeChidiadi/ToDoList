@@ -135,3 +135,10 @@ Now comes the configuration of MySQL
   You have to open ´´´app\database\migrations´´´ and migrate this table: ´´´create_users_table.php´´´
   How to migrate → php artisan migrate
   After you did this you open Herd and the website should be visiable.
+
+# Using MySQL Command Line Client
+• Go to START
+• Go to Alle and scroll to MySQL and click the MySQL Command Line Client
+• After the window opens type in your password
+• To use a database first type this: create database NameDB; and then use NameDB. With that the database gets changed.
+• If you want to see all your databases type: show databases;
