@@ -138,7 +138,11 @@ Now comes the configuration of MySQL
 
 # Using MySQL Command Line Client
 • Go to START
+
 • Go to Alle and scroll to MySQL and click the MySQL Command Line Client
+
 • After the window opens type in your password
+
 • To use a database first type this: create database NameDB; and then use NameDB. With that the database gets changed.
+
 • If you want to see all your databases type: show databases;
