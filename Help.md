@@ -108,17 +108,25 @@ Type this inside your terminal: ```php --version``` or ```php -v```
 # Installing MySQL
 
 • Go to the website of MySQL and click downloads
+
 • Then scroll down to the near end and click MySQL Community (GPL) Downloads
+
 • After that click on MySQL Community Server and take the current version (right now: 9.3.0 Innovation), select the correct   operating system and press download
 
 Now comes the configuration of MySQL
 
 • MySQL Server Installations: Choose "Configure this server instance as a side-by-side installation
+
 • Type and Networking: Leave everything as it is. (If the port is already in use choose another one. With cmd and typing      netstat -a you have a view of the active networks)
+
 • Accounts and Roles: Choose the password
+
 • Windows Service: Leave everything as it is
+
 • Server File Permissions: Choose → Yes, grant full access to the user running the Windows Service bla bla bla
+
 • Sample Databases: Tick off the two boxes
+
 • Apply Configuration: Just press Execute so all will be executed
 
 * In case this error appears:
