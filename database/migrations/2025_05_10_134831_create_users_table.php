@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('username')->unique();
+            $table->string('username')->unique(); //unique makes sure that the username is unique in the database and cannot be duplicated
             $table->string('password');
+            $table->string('password_confirmation'); //This field is used to confirm the password during registration
             $table->timestamps();
         });
     }
