@@ -35,8 +35,8 @@ class LoginRegisterController extends Controller
         $request->validate([
             'firstname' => 'required|min:2|alpha',
             'lastname' => 'required|min:2|alpha',
-            'username' => 'required|min:2|alpha',
             'password' => 'required|confirmed|min:6',
+            'password_confirmation' => 'required',
         ]);
 
         session()->put('inputData', [
