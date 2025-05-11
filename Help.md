@@ -98,3 +98,51 @@ Here is the solution:
 
 # How to know your current php version
 Type this inside your terminal: ```php --version``` or ```php -v```
+
+# How to make the Database from Laravel appear in HeidiSQL
+
+• You have to go to your models and type ```php artisan migrate```
+
+• After it's migrated you open HeidiSQL and the Models you created should appear
+
+# Installing MySQL
+
+• Go to the website of MySQL and click downloads
+
+• Then scroll down to the near end and click MySQL Community (GPL) Downloads
+
+• After that click on MySQL Community Server and take the current version (right now: 9.3.0 Innovation), select the correct   operating system and press download
+
+Now comes the configuration of MySQL
+
+• MySQL Server Installations: Choose "Configure this server instance as a side-by-side installation
+
+• Type and Networking: Leave everything as it is. (If the port is already in use choose another one. With cmd and typing      netstat -a you have a view of the active networks)
+
+• Accounts and Roles: Choose the password
+
+• Windows Service: Leave everything as it is
+
+• Server File Permissions: Choose → Yes, grant full access to the user running the Windows Service bla bla bla
+
+• Sample Databases: Tick off the two boxes
+
+• Apply Configuration: Just press Execute so all will be executed
+
+* In case this error appears:
+* > SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ue4_dike_eventmanager.sessions' doesn't exist (Connection: mysql, SQL: select * from `sessions` where `id` = OOcNcv20Gt9F0KSX7kcrbn6z79Le9DGyjOhsjSmM limit 1)
+
+  You have to open ´´´app\database\migrations´´´ and migrate this table: ´´´create_users_table.php´´´
+  How to migrate → php artisan migrate
+  After you did this you open Herd and the website should be visiable.
+
+# Using MySQL Command Line Client
+• Go to START
+
+• Go to Alle and scroll to MySQL and click the MySQL Command Line Client
+
+• After the window opens type in your password
+
+• To use a database first type this: create database NameDB; and then use NameDB. With that the database gets changed.
+
+• If you want to see all your databases type: show databases;
