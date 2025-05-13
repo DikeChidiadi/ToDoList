@@ -97,21 +97,21 @@ Here is the solution:
 • ```php artisan make:controller NameController --model=Name``` -> is for creating a controller and a model
 
 Which kind of migrations exist:
-• php artisan make:migration
+• ```php artisan make:migration``` → Creates a new migration file in the ```database/migrations``` directory. You can specify a name for the migration, and it will create a new file with a timestamp and the name you provided.
 
-• php artisan migration
+• ```php artisan migration``` → Runs all unsettled migrations. This command will apply any new migrations that haven't been run yet.
 
-• php artisan migrate:fresh
+• ```php artisan migrate:fresh``` → Drops all tables and reruns all migrations. This command is useful for resetting you database to a fresh state.
 
-• php artisan migrate:install
+• ```php artisan migrate:install``` → Creates the migration repository table in your database. This table is used to keep tack of which migrations have been run.
 
-• php artisan migrate:refresh
+• ```php artisan migrate:refresh``` → Reruns all migrations, but doesn't drop any tables that already exist. This command is similar to ```migrate:fresh```, but it won't delete any existing data.
 
-• php artisan migrate:reset
+• ```php artisan migrate:reset``` → Reverts all migrations. This command will roll back all migrations and delete any tables that were created by them.
 
-• php artisan migrate:rollback
+• ```php artisan migrate:rollback``` → Reverts the last migration that was run. You can specify a specific number of migrations to roll back by using ```--step``` option.
 
-• php artisan migrate:status
+• ```php artisan migrate:status``` → Displays the status of all migrations. This command will show you which migrations have been run and which ones haven't. These commands are used to manage your database schema and ensure that it's in sync with your application's code.
 
 
 # How to know your current php version
