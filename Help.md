@@ -96,6 +96,24 @@ Here is the solution:
 
 • ```php artisan make:controller NameController --model=Name``` -> is for creating a controller and a model
 
+Which kind of migrations exist:
+• php artisan make:migration
+
+• php artisan migration
+
+• php artisan migrate:fresh
+
+• php artisan migrate:install
+
+• php artisan migrate:refresh
+
+• php artisan migrate:reset
+
+• php artisan migrate:rollback
+
+• php artisan migrate:status
+
+
 # How to know your current php version
 Type this inside your terminal: ```php --version``` or ```php -v```
 
