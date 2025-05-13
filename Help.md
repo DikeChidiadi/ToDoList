@@ -103,7 +103,7 @@ Which kind of migrations exist:
 
 • ```php artisan migrate:fresh``` → Drops all tables and reruns all migrations. This command is useful for resetting you database to a fresh state.
 
-• ```php artisan migrate:install``` → Creates the migration repository table in your database. This table is used to keep tack of which migrations have been run.
+• ```php artisan migrate:install``` → Creates the migration repository table in your database. This table is used to keep track of which migrations have been run.
 
 • ```php artisan migrate:refresh``` → Reruns all migrations, but doesn't drop any tables that already exist. This command is similar to ```migrate:fresh```, but it won't delete any existing data.
 
