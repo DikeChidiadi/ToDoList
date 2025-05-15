@@ -97,6 +97,7 @@ Here is the solution:
 • ```php artisan make:controller NameController --model=Name``` -> is for creating a controller and a model
 
 Which kind of migrations exist:
+
 • ```php artisan make:migration``` → Creates a new migration file in the ```database/migrations``` directory. You can specify a name for the migration, and it will create a new file with a timestamp and the name you provided.
 
 • ```php artisan migration``` → Runs all unsettled migrations. This command will apply any new migrations that haven't been run yet.
