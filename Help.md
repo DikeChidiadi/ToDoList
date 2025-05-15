@@ -117,11 +117,11 @@ Which kind of migrations exist:
 # How to know your current php version
 Type this inside your terminal: ```php --version``` or ```php -v```
 
-# How to make the Database from Laravel appear in HeidiSQL
+# How to make the Database from Laravel appear in HeidiSQL or any other
 
-• You have to go to your models and type ```php artisan migrate```
+• You have to go to migrations and type ```php artisan migrate```
 
-• After it's migrated you open HeidiSQL and the Models you created should appear
+• After it's migrated you open HeidiSQL and the migration you created should appear
 
 # Installing MySQL
 
