@@ -13,15 +13,9 @@
                     <fieldset class="fieldset w-xs bg-base-200 border border-base-300 p-4 rounded-box">
                         <legend class="fieldset-legend"></legend>
                         
-                        <label class="fieldset-label">Firstname</label>
-                        <input type="text" class="input" placeholder="z.B.: Lewis"/>
-                        @error('firstname')
-                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                        @enderror
-
-                        <label class="fieldset-label">Lastname</label>
-                        <input type="text" class="input" placeholder="z.B.: Hamilton"/>
-                        @error('lastname')
+                        <label class="fieldset-label">Username</label>
+                        <input type="text" class="input" placeholder="z.B.: LewisHamilton44" />
+                        @error('username')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                         @enderror
                         
