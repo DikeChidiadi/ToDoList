@@ -130,7 +130,9 @@ Type this inside your terminal: ```php --version``` or ```php -v```
 
 • Then scroll down to the near end and click MySQL Community (GPL) Downloads
 
-• After that click on MySQL Community Server and take the current version (right now: 9.3.0 Innovation), select the correct   operating system and press download
+• After that click on MySQL Community Server and take the current version (right now: 9.3.0 Innovation), select the Windows MSI Installer and press download
+
+• After finishing the download and clicking on it, a small window will appear. After some time the 'Choose Setup Type' will appear and I would need to choose Complete.
 
 Now comes the configuration of MySQL
 
