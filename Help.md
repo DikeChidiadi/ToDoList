@@ -13,12 +13,8 @@ How to see if it worked? -> ```node -v``` and ```npm -v```
 
 • Type this: ```npm install tailwindcss @tailwindcss/vite```
 
-• After it finished downloading then you go to tailwind.config.js
-  and type this: ```import tailwindcss from '@tailwindcss/vite'```
-
 • Under ```./resources/css/app.css``` you add this too: 
 ```php
-@import "tailwindcss";
 @source "../views";
 ```
 
@@ -27,9 +23,9 @@ How to see if it worked? -> ```node -v``` and ```npm -v```
 
 # After downloading Tailwind CSS, downloading Daisy UI:
 
-• Type this into the terminal: ```npm i daisyui```
+• Type this into the terminal: ```npm i -D daisyui@latest```
 
-• In tailwind.config.js you put this into the plugin: 
+• In vite.config.js you put this into the plugin: 
 ```php
 require('daisyui'),
 ```
