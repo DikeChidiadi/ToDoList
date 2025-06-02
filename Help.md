@@ -1,6 +1,9 @@
 # Laravel Installer or Composer not found
 
 If I want to create a new project in Laravel and an error comes back, I have to download the latest Node.js for it to work
+I would need to download the .msi
+After I clicked myself past everything and it says Powershell need to be opened to download everything and it downloaded everything, I would need to close Visual Studio Code and open it again to see if it worked.
+How to see if it worked? -> ```node -v``` and ```npm -v```
 
 # How to download Tailwind CSS:
 
