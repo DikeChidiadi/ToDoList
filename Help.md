@@ -1,3 +1,7 @@
+# Laravel Installer or Composer not found
+
+If I want to create a new project in Laravel and an error comes back, I have to download the latest Node.js for it to work
+
 # How to download Tailwind CSS:
 
 • You would need to have Node.js downloaded.
