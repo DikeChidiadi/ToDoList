@@ -19,21 +19,21 @@
             
         @endif
     </head>
-    <body>
-        <div class="min-h-full">
-            <div class="pt-5 text-3xl text-center font-bold font-mono tracking-wide text-white bg-sky-600 h-20">
-                <p>To-Do List</p>
-            </div>
-
-            <!--<x-nav-link href="/" :active="request()->is('/')">Login</x-nav-link>-->
-            <!--<x-nav-link href="/home" :active="request()->is('/')">Home</x-nav-link>-->
-            
-            <div class="flex justify-center mt-10">
-                <div class="w-1/2">
-                    {{ $slot }}
-                </div>
-            </div>
-
+    <body class="min-h-screen flex flex-col bg-blue-100">
+        <div class="pt-5 text-3xl text-center font-bold font-mono tracking-wide text-white bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% h-20">
+            <p>To-Do List</p>
         </div>
+        
+        <div class="flex justify-center mt-10 flex-1">
+            <div class="w-1/2">
+                {{ $slot }}
+            </div>
+        </div>
+
+        <footer class="footer sm:footer-horizontal footer-center text-white bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% p-4">
+            <aside>
+                <p>Copyright © {{ date('Y') }} - All right reserved by Chidiadi Dike</p>
+            </aside>
+        </footer>
     </body>
 </html>
