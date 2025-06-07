@@ -6,33 +6,30 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
-    public function index() {
-        return view('home');
+    public function index()
+    {
+        $todos = session('todos', []);
+        return view('home', compact('todos'));
     }
 
-    function register(Request $request) {
+    public function register(Request $request)
+    {
         $request->validate([
-            'firstname' => 'required|min:3|max:20',
-            'lastname' => 'required|min:3|max:20',
-            'password' => 'required|min:6',
+            'todo' => 'required|string|max:255',
         ]);
 
-        session()->put('inputData', [
-            'firstname' => $request->firstname,
-            'lastname' => $request->lastname,
-            'password' => $request->password,
-        ]);
-        return redirect('/home')->with('success', 'You have been registered');
+        $todos = session('todos', []);
+        $todos[] = ['todo' => $request->todo];
+        session(['todos' => $todos]);
+
+        return redirect()->route('home');
     }
 
-    function home() {
-        $inputData = session()->get('inputData');
-        
-        return view('home', ['inputData' => $inputData]);
-    }
-
-    function logout(Request $request) {
-        $request->session()->flush();
-        return redirect('/')->with('success', 'You have been logged out');
+    public function delete($id)
+    {
+        $todos = session('todos', []);
+        unset($todos[$id]);
+        session(['todos' => array_values($todos)]);
+        return redirect()->route('home');
     }
 }
