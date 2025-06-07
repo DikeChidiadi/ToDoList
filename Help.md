@@ -1,3 +1,10 @@
+# Laravel Installer or Composer not found
+
+If I want to create a new project in Laravel and an error comes back, I have to download the latest Node.js for it to work
+I would need to download the .msi
+After I clicked myself past everything and it says Powershell need to be opened to download everything and it downloaded everything, I would need to close Visual Studio Code and open it again to see if it worked.
+How to see if it worked? -> ```node -v``` and ```npm -v```
+
 # How to download Tailwind CSS:
 
 • You would need to have Node.js downloaded.
@@ -6,12 +13,8 @@
 
 • Type this: ```npm install tailwindcss @tailwindcss/vite```
 
-• After it finished downloading then you go to tailwind.config.js
-  and type this: ```import tailwindcss from '@tailwindcss/vite'```
-
 • Under ```./resources/css/app.css``` you add this too: 
 ```php
-@import "tailwindcss";
 @source "../views";
 ```
 
@@ -20,9 +23,9 @@
 
 # After downloading Tailwind CSS, downloading Daisy UI:
 
-• Type this into the terminal: ```npm i daisyui```
+• Type this into the terminal: ```npm i -D daisyui@latest```
 
-• In tailwind.config.js you put this into the plugin: 
+• In vite.config.js you put this into the plugin: 
 ```php
 require('daisyui'),
 ```
@@ -130,7 +133,9 @@ Type this inside your terminal: ```php --version``` or ```php -v```
 
 • Then scroll down to the near end and click MySQL Community (GPL) Downloads
 
-• After that click on MySQL Community Server and take the current version (right now: 9.3.0 Innovation), select the correct   operating system and press download
+• After that click on MySQL Community Server and take the current version (right now: 9.3.0 Innovation), select the Windows MSI Installer and press download
+
+• After finishing the download and clicking on it, a small window will appear. After some time the 'Choose Setup Type' will appear and I would need to choose Complete.
 
 Now comes the configuration of MySQL
 
