@@ -1,17 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 
 
 Route::get('/',  function () {
-    return view('loginregister');
+    return view('register');
 });
 
-Route::get('/home', [LoginController::class, 'home'])->name('home');
-Route::post('/login', [LoginController::class, 'login']);
-
-
-
-Route::match(['get', 'post'], '/home', [RegisterController::class, 'home']);
+Route::get('/home', [RegisterController::class, 'index'])->name('home');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
+Route::post('/delete/{id}', [RegisterController::class, 'delete'])->name('todo.delete');
