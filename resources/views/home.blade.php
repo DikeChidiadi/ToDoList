@@ -1,6 +1,8 @@
 <x-layout>
-    <form action="{{ route('home') }}" method="POST" class="flex flex-col space-y-12 justify-between">
+    <form action="{{ route('todos.store') }}" method="POST" class="flex flex-col space-y-12 justify-between">
         @csrf
+        <h1 class="text-4xl font-bold text-blue-900 text-center mb-6">Hi, {{ $username }}!</h1>
+
         <div class="place-items-center">
             <fieldset class="fieldset bg-base-200 border p-4 border-base-300 rounded-box w-xs">
                 <div class="mb-4 flex items-end space-x-2">
