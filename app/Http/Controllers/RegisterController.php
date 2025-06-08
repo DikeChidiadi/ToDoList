@@ -9,27 +9,21 @@ class RegisterController extends Controller
     public function index()
     {
         $todos = session('todos', []);
-        return view('home', compact('todos'));
+        $username = session('$username', 'User'); // Or fetch from auth/session if available
+        return view('home', compact('todos', 'username'));
     }
 
     public function register(Request $request)
     {
+        // Validate the username input
         $request->validate([
-            'todo' => 'required|string|max:255',
+            'username' => 'required|string|max:255',
         ]);
 
-        $todos = session('todos', []);
-        $todos[] = ['todo' => $request->todo];
-        session(['todos' => $todos]);
+        // Store username in session
+        session(['username' => $request->username]);
 
-        return redirect()->route('home');
-    }
-
-    public function delete($id)
-    {
-        $todos = session('todos', []);
-        unset($todos[$id]);
-        session(['todos' => array_values($todos)]);
+        // Redirect to home
         return redirect()->route('home');
     }
 }
