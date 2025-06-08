@@ -6,31 +6,31 @@ use Illuminate\Http\Request;
 
 class TodosController extends Controller
 {
-    function index() {
-        return view('home');
+    public function index()
+    {
+        $todos = session('todos', []);
+        $username = 'User';
+        return view('home', compact('todos', 'username'));
     }
 
-    function todos(Request $request) {
+    public function store(Request $request)
+    {
         $request->validate([
-            'todo' => 'nullable|max:500',
+            'todo' => 'required|string|max:255',
         ]);
 
-        session()->put('todoData', [
-            'todo' => $request->todo,
-            'completed' => $request->has('completed') ? true : false,
-        ]);
+        $todos = session('todos', []);
+        $todos[] = ['todo' => $request->todo];
+        session(['todos' => $todos]);
 
-        return redirect()->route('home')->with('success', 'Todo item has been added successfully');
+        return redirect()->route('home');
     }
 
-    function home() {
-        $todoData = session()->get('todoData', []);
-        return view('home', compact('todoData'));
-    }
-
-    public function speichern(Request $request) {
-        $request->validate([
-        'todo' => 'nullable|max:500',
-        ]);
+    public function delete($id)
+    {
+        $todos = session('todos', []);
+        unset($todos[$id]);
+        session(['todos' => array_values($todos)]);
+        return redirect()->route('home');
     }
 }
