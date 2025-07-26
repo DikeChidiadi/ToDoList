@@ -9,7 +9,7 @@ class TodosController extends Controller
     public function index()
     {
         $todos = session('todos', []);
-        $username = 'User';
+        $username = session('username', 'User'); // <-- FIXED: get from session
         return view('home', compact('todos', 'username'));
     }
 
