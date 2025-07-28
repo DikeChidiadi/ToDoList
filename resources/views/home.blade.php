@@ -19,18 +19,36 @@
     @if(!empty($todos))
         <div class="mt-8 w-1/2 mx-auto">
             <ul class="space-y-4">
-                @foreach($todos as $id => $item)
+                <?php foreach($todos as $id => $item): ?>
                     <li class="flex justify-between items-center bg-white p-4 rounded shadow">
-                        <span>{{ $item['todo'] }}</span>
-                        <div class="space-x-2">
-                            <button class="btn btn-sm btn-secondary" disabled>Edit</button>
-                            <form action="{{ route('todo.delete', $id) }}" method="POST" class="inline">
+                        @if(isset($editingId) && $editingId == $id)
+                            <form action="{{ route('todos.update', $id) }}" method="POST" class="flex flex-1 space-x-2">
                                 @csrf
-                                <button type="submit" class="btn btn-sm btn-error">Delete</button>
+                                @method('POST')
+                                <input type="text" name="todo" value="{{ $item['todo'] }}" class="input flex-1" required>
+                                <button type="submit" class="btn btn-sm btn-success">Save</button>
                             </form>
-                        </div>
+                        @else
+                            <form action="{{ route('todos.toggle', $id) }}" method="POST" class="flex-1 cursor-pointer">
+                                @csrf
+                                <button type="submit" class="w-full text-left bg-transparent border-none p-0 m-0
+                                    {{ !empty($item['done']) && $item['done'] ? 'line-through text-gray-400' : '' }}">
+                                    {{ $item['todo'] }}
+                                </button>
+                            </form>
+                            <div class="flex space-x-2">
+                                <form action="{{ route('todos.edit', $id) }}" method="POST" class="inline">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-secondary">Edit</button>
+                                </form>
+                                <form action="{{ route('todo.delete', $id) }}" method="POST" class="inline">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-error">Delete</button>
+                                </form>
+                            </div>
+                        @endif
                     </li>
-                @endforeach
+                <?php endforeach; ?>
             </ul>
         </div>
     @endif
