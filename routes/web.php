@@ -13,3 +13,6 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 Route::get('/home', [TodosController::class, 'index'])->name('home');
 Route::post('/todos', [TodosController::class, 'store'])->name('todos.store');
 Route::post('/delete/{id}', [TodosController::class, 'delete'])->name('todo.delete');
+Route::post('/todos/{id}/edit', [TodosController::class, 'edit'])->name('todos.edit');
+Route::post('/todos/{id}/update', [TodosController::class, 'update'])->name('todos.update');
+Route::post('/todos/{id}/toggle', [TodosController::class, 'toggle'])->name('todos.toggle');
