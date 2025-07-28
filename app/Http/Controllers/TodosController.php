@@ -20,7 +20,7 @@ class TodosController extends Controller
         ]);
 
         $todos = session('todos', []);
-        $todos[] = ['todo' => $request->todo];
+        $todos[] = ['todo' => $request->todo, 'done' => false];
         session(['todos' => $todos]);
 
         return redirect()->route('home');
@@ -31,6 +31,40 @@ class TodosController extends Controller
         $todos = session('todos', []);
         unset($todos[$id]);
         session(['todos' => array_values($todos)]);
+        return redirect()->route('home');
+    }
+    
+    public function edit($id)
+    {
+        $todos = session('todos', []);
+        $username = session('username', 'User');
+        return view('home', [
+            'todos' => $todos,
+            'username' => $username,
+            'editingId' => $id
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'todo' => 'required|string|max:255',
+        ]);
+        $todos = session('todos', []);
+        if (isset($todos[$id])) {
+            $todos[$id]['todo'] = $request->todo;
+            session(['todos' => $todos]);
+        }
+        return redirect()->route('home');
+    }
+    
+    public function toggle($id)
+    {
+        $todos = session('todos', []);
+        if (isset($todos[$id])) {
+            $todos[$id]['done'] = !$todos[$id]['done'];
+            session(['todos' => $todos]);
+        }
         return redirect()->route('home');
     }
 }
