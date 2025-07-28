@@ -9,7 +9,7 @@ class TodosController extends Controller
     public function index()
     {
         $todos = session('todos', []);
-        $username = session('username', 'User'); // <-- FIXED: get from session
+        $username = session('username', 'User');
         return view('home', compact('todos', 'username'));
     }
 
@@ -17,10 +17,15 @@ class TodosController extends Controller
     {
         $request->validate([
             'todo' => 'required|string|max:255',
+            'category' => 'required|string|max:255',
         ]);
 
         $todos = session('todos', []);
-        $todos[] = ['todo' => $request->todo, 'done' => false];
+        $todos[] = [
+            'todo' => $request->todo,
+            'category' => $request->category,
+            'done' => false
+        ];
         session(['todos' => $todos]);
 
         return redirect()->route('home');
@@ -33,7 +38,7 @@ class TodosController extends Controller
         session(['todos' => array_values($todos)]);
         return redirect()->route('home');
     }
-    
+
     public function edit($id)
     {
         $todos = session('todos', []);
@@ -57,7 +62,7 @@ class TodosController extends Controller
         }
         return redirect()->route('home');
     }
-    
+
     public function toggle($id)
     {
         $todos = session('todos', []);
