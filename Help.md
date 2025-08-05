@@ -1,3 +1,6 @@
+# How to install a new Laravel Project
+
+
 # Laravel Installer or Composer not found
 
 If I want to create a new project in Laravel and an error comes back, I have to download the latest Node.js for it to work
