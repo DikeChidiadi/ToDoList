@@ -1,5 +1,5 @@
 # How to install a new Laravel Project
-
+→ in case you need to update the laravel version: ```composer global update laravel/installer```
 
 # Laravel Installer or Composer not found
 
