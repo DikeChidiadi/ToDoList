@@ -173,3 +173,13 @@ Now comes the configuration of MySQL
 • To use a database first type this: create database NameDB; and then use NameDB. With that the database gets changed.
 
 • If you want to see all your databases type: show databases;
+
+# MySQL doesn't connect to Laravel?
+Here is what you should do:
+
+Verify .env Loading:
+
+Ensure that your `.env` file is being loaded correctly. Sometimes, changes to the `.env` file are not immediately reflected. You can try clearing the configuration cache:
+```php
+php artisan config:clear
+```
