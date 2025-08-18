@@ -177,9 +177,21 @@ Now comes the configuration of MySQL
 # MySQL doesn't connect to Laravel?
 Here is what you should do:
 
-Verify .env Loading:
+1. Verify .env Loading:
 
 Ensure that your `.env` file is being loaded correctly. Sometimes, changes to the `.env` file are not immediately reflected. You can try clearing the configuration cache:
 ```php
 php artisan config:clear
 ```
+2. Check database.php:
+
+Open `database.php` and verify that the ```default``` connection is set to use the ```DB_CONNECTION``` environment variable:
+```php
+// filepath: config/database.php
+// ...existing code...
+'default' => env('DB_CONNECTION', 'sqlite'),
+// ...existing code...
+```
+3. Confirm MySQL Configuration:
+
+Double-check that your MySQL database credentials in the .env file .env are correct:
