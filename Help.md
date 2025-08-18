@@ -183,15 +183,65 @@ Ensure that your `.env` file is being loaded correctly. Sometimes, changes to th
 ```php
 php artisan config:clear
 ```
+
 2. Check database.php:
 
-Open `database.php` and verify that the ```default``` connection is set to use the ```DB_CONNECTION``` environment variable:
+Open `database.php` and verify that the `default` connection is set to use the `DB_CONNECTION` environment variable:
 ```php
 // filepath: config/database.php
 // ...existing code...
 'default' => env('DB_CONNECTION', 'sqlite'),
 // ...existing code...
 ```
+Make sure that the `learnlaravelauthdb` database exists in your MySQL server and that the `root` user has the necessary privileges to access it.
+
 3. Confirm MySQL Configuration:
 
-Double-check that your MySQL database credentials in the .env file .env are correct:
+Double-check that your MySQL database credentials in the `.env` file `.env` are correct:
+```php
+// filepath: .env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=learnlaravelauthdb
+DB_USERNAME=root
+DB_PASSWORD=root
+```
+
+4. Session Driver:
+
+Since the error occurs when accessing the `sessions table`, ensure your session driver is correctly configured. In your `.env` file `.env`, you have:
+```php
+// filepath: .env
+SESSION_DRIVER=database
+```
+This means Laravel is using the database to store `session` data. Make sure the sessions table exists. It should have been created by running the migrations.
+
+5. Run Migrations:
+
+If the `sessions` table doesn't exist, run the migrations to create it and other necessary tables:
+```php
+php artisan migrate
+```
+If you have already run the migrations, try refreshing them:
+```php
+php artisan migrate:refresh
+```
+
+6. Check Session Configuration:
+
+Review your `session.php` file to ensure that the connection is correctly set to your MySQL database connection:
+```php
+// filepath: config/session.php
+// ...existing code...
+'connection' => env('SESSION_CONNECTION'),
+// ...existing code...
+```
+If `SESSION_CONNECTION` is not defined in your `.env` file, it will use the default database connection (`mysql` in your case, as defined by `DB_CONNECTION`). If you want to use a different database connection for sessions, you can define `SESSION_CONNECTION` in your `.env` file.
+7. Final Check:
+
+After applying these changes, clear the cache again:
+```php
+php artisan config:clear
+```
+This will ensure that Laravel is using the latest configuration.
