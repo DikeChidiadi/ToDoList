@@ -245,3 +245,9 @@ After applying these changes, clear the cache again:
 php artisan config:clear
 ```
 This will ensure that Laravel is using the latest configuration.
+
+# How to uninstall breeze
+
+1. `composer remove laravel/breeze`
+2. `composer update`
+3. `php artisan config:cache`
