@@ -2,7 +2,9 @@
 → in case you need to update the laravel version: ```composer global update laravel/installer```
 
 # How to make a relationship (Beziehung)
+```php
 $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+```
 
 user_id = id
 
