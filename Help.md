@@ -1,6 +1,12 @@
 # How to install a new Laravel Project
 → in case you need to update the laravel version: ```composer global update laravel/installer```
 
+# How to make a relationship (Beziehung)
+$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+user_id = id
+users = table name
+
 # Laravel Installer or Composer not found
 
 If I want to create a new project in Laravel and an error comes back, I have to download the latest Node.js for it to work
