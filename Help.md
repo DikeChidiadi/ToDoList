@@ -5,6 +5,7 @@
 $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
 user_id = id
+
 users = table name
 
 # Laravel Installer or Composer not found
