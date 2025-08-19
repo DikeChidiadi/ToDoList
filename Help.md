@@ -238,6 +238,7 @@ Review your `session.php` file to ensure that the connection is correctly set to
 // ...existing code...
 ```
 If `SESSION_CONNECTION` is not defined in your `.env` file, it will use the default database connection (`mysql` in your case, as defined by `DB_CONNECTION`). If you want to use a different database connection for sessions, you can define `SESSION_CONNECTION` in your `.env` file.
+
 7. Final Check:
 
 After applying these changes, clear the cache again:
