@@ -261,3 +261,9 @@ This will ensure that Laravel is using the latest configuration.
 1. `composer remove laravel/breeze`
 2. `composer update`
 3. `php artisan config:cache`
+
+# How to remove the teams option from Jetstream
+
+Simply comment out the `Feature::teams()` line in `config/jetstream.php`
+
+After that the dashboard should appear. :)
