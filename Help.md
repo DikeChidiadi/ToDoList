@@ -267,3 +267,7 @@ This will ensure that Laravel is using the latest configuration.
 Simply comment out the `Feature::teams()` line in `config/jetstream.php`
 
 After that the dashboard should appear. :)
+
+# For icons
+
+https://heroicons.com/ und https://www.svgrepo.com/
