@@ -3,7 +3,7 @@
 
 # How to make a relationship (Beziehung)
 ```php
-$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+$table->foreign('user_id')->references('id')->on('users');
 ```
 
 user_id = id
