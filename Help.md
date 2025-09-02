@@ -1,14 +1,6 @@
 # How to install a new Laravel Project
 → in case you need to update the laravel version: ```composer global update laravel/installer```
 
-# How to make a relationship (Beziehung)
-```php
-$table->foreign('user_id')->references('id')->on('users');
-```
-
-user_id = id
-
-users = table name
 
 # Laravel Installer or Composer not found
 
@@ -144,6 +136,16 @@ Which kind of migrations exist:
 • ```php artisan migrate:rollback``` → Reverts the last migration that was run. You can specify a specific number of migrations to roll back by using ```--step``` option.
 
 • ```php artisan migrate:status``` → Displays the status of all migrations. This command will show you which migrations have been run and which ones haven't. These commands are used to manage your database schema and ensure that it's in sync with your application's code.
+
+
+# How to make a relationship (Beziehung)
+```php
+$table->foreign('user_id')->references('id')->on('users');
+```
+
+user_id = id
+
+users = table name
 
 
 # How to know your current php version
