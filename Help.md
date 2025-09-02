@@ -17,6 +17,18 @@ I would need to download the .msi
 After I clicked myself past everything and it says Powershell need to be opened to download everything and it downloaded everything, I would need to close Visual Studio Code and open it again to see if it worked.
 How to see if it worked? -> ```node -v``` and ```npm -v```
 
+# How to make Tailwind CSS and Daisy UI work with Laravel/Livewire:
+
+I would need to put this code:
+
+```php
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+```
+in this file → `resources\views\components\layouts`
+
 # How to download Tailwind CSS:
 
 • You would need to have Node.js downloaded.
