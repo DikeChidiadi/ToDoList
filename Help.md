@@ -19,6 +19,10 @@ How to see if it worked? -> ```node -v``` and ```npm -v```
 
 # How to make Tailwind CSS and Daisy UI work with Laravel/Livewire:
 
+In this path:
+
+`resources\views\components\layouts\app.blade.php`
+
 I would need to put this code:
 
 ```php
@@ -27,7 +31,7 @@ I would need to put this code:
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 ```
-in this file → `resources\views\components\layouts`
+
 
 # How to download Tailwind CSS:
 
