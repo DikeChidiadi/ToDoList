@@ -9,6 +9,10 @@ I would need to download the .msi
 After I clicked myself past everything and it says Powershell need to be opened to download everything and it downloaded everything, I would need to close Visual Studio Code and open it again to see if it worked.
 How to see if it worked? -> ```node -v``` and ```npm -v```
 
+# Laravel Version
+
+Want to check what Laravel version you are on, then type this in the terminal: ```php artisan --version```
+
 # How to make Tailwind CSS and Daisy UI work with Laravel/Livewire:
 
 In this path:
