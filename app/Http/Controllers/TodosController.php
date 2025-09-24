@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Todo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TodosController extends Controller
 {
     public function index()
     {
-        $todos = session('todos', []);
-        $username = session('username', 'User');
-        return view('home', compact('todos', 'username'));
+        return view('home', [
+            'username' => Auth::user()->username,
+            'todos' => Auth::user()->todos()->get()
+        ]);
     }
 
     public function store(Request $request)
@@ -20,56 +23,57 @@ class TodosController extends Controller
             'category' => 'required|string|max:255',
         ]);
 
-        $todos = session('todos', []);
-        $todos[] = [
+        Auth::user()->todos()->create([
             'todo' => $request->todo,
             'category' => $request->category,
-            'done' => false
-        ];
-        session(['todos' => $todos]);
+        ]);
 
         return redirect()->route('home');
     }
 
-    public function delete($id)
+    public function delete(Todo $todo)
     {
-        $todos = session('todos', []);
-        unset($todos[$id]);
-        session(['todos' => array_values($todos)]);
+        dd($todo);
+        // Authorization check
+        if ($todo->user_id !== Auth::id()) {
+            abort(403, 'Unauthorized action.');
+        }
+        $todo->delete();
         return redirect()->route('home');
     }
 
-    public function edit($id)
+    public function update(Request $request, Todo $todo)
     {
-        $todos = session('todos', []);
-        $username = session('username', 'User');
+        // Authorization check
+        if ($todo->user_id !== Auth::id()) {
+            abort(403, 'Unauthorized action.');
+        }
+        $request->validate(['todo' => 'required|string|max:255']);
+        $todo->update(['todo' => $request->todo]);
+        return redirect()->route('home');
+    }
+
+    public function toggle(Todo $todo)
+    {
+        // Authorization check
+        if ($todo->user_id !== Auth::id()) {
+            abort(403, 'Unauthorized action.');
+        }
+        $todo->update(['done' => !$todo->done]);
+        return redirect()->route('home');
+    }
+
+    // The edit method can be simplified or removed if using inline editing
+    public function edit(Todo $todo)
+    {
+        // Authorization check
+        if ($todo->user_id !== Auth::id()) {
+            abort(403, 'Unauthorized action.');
+        }
         return view('home', [
-            'todos' => $todos,
-            'username' => $username,
-            'editingId' => $id
+            'username' => Auth::user()->username,
+            'todos' => Auth::user()->todos()->get(),
+            'editingId' => $todo->id
         ]);
-    }
-
-    public function update(Request $request, $id)
-    {
-        $request->validate([
-            'todo' => 'required|string|max:255',
-        ]);
-        $todos = session('todos', []);
-        if (isset($todos[$id])) {
-            $todos[$id]['todo'] = $request->todo;
-            session(['todos' => $todos]);
-        }
-        return redirect()->route('home');
-    }
-
-    public function toggle($id)
-    {
-        $todos = session('todos', []);
-        if (isset($todos[$id])) {
-            $todos[$id]['done'] = !$todos[$id]['done'];
-            session(['todos' => $todos]);
-        }
-        return redirect()->route('home');
     }
 }

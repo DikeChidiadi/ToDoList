@@ -2,28 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
 
 class RegisterController extends Controller
 {
-    public function index()
+    /**
+     * Display the registration view.
+     */
+    public function create()
     {
-        $todos = session('todos', []);
-        $username = session('$username', 'User'); // Or fetch from auth/session if available
-        return view('home', compact('todos', 'username'));
+        return view('register');
     }
 
-    public function register(Request $request)
+    /**
+     * Handle an incoming registration request.
+     */
+    public function store(Request $request)
     {
-        // Validate the username input
         $request->validate([
-            'username' => 'required|string|max:255',
+            'username' => ['required', 'string', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        // Store username in session
-        session(['username' => $request->username]);
+        $user = User::create([
+            'name' => $request->username, // Use 'name' as the column for the username
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+        ]);
 
-        // Redirect to home
+        Auth::login($user);
+
         return redirect()->route('home');
     }
 }
