@@ -26,42 +26,40 @@
         </div>
     </form>
 
-    @if(!empty($todos))
+    @if($todos->isNotEmpty())
         <div class="mt-8 w-1/2 mx-auto">
             <ul class="space-y-4">
-                @foreach($todos as $id => $item)
+                @foreach($todos as $todo)
                     <li class="flex justify-between items-center bg-white p-4 rounded shadow">
-                        <div>
-                            <span class="font-bold {{ !empty($item['done']) && $item['done'] ? 'line-through text-gray-400' : '' }}">
-                                {{ $item['todo'] }}
-                            </span>
-                            <span class="ml-2 px-2 py-1 rounded bg-blue-100 text-blue-800 text-xs">
-                                {{ $item['category'] ?? 'Uncategorised' }}
-                            </span>
-                        </div>
 
-                        @if(isset($editingId) && $editingId == $id)
-                            <form action="{{ route('todos.update', $id) }}" method="POST" class="flex flex-1 space-x-2">
+                        @if(isset($editingId) && $editingId == $todo->id)
+                            {{-- EDITING FORM --}}
+                            <form action="{{ route('todos.update', $todo) }}" method="POST" class="flex flex-1 space-x-2">
                                 @csrf
-                                @method('POST')
-                                <input type="text" name="todo" value="{{ $item['todo'] }}" class="input flex-1" required>
+                                <input type="text" name="todo" value="{{ $todo->todo }}" class="input flex-1" required>
                                 <button type="submit" class="btn btn-sm btn-success">Save</button>
                             </form>
                         @else
-                            <form action="{{ route('todos.toggle', $id) }}" method="POST" class="flex-1 cursor-pointer">
-                                @csrf
-                                <button type="submit" class="w-full text-left bg-transparent border-none p-0 m-0
-                                    {{ !empty($item['done']) && $item['done'] ? 'line-through text-gray-400' : '' }}">
-                                    <span class="font-bold">{{ $item['todo'] }}</span>
-                                    <span class="ml-2 px-2 py-1 rounded bg-blue-100 text-blue-800 text-xs">{{ $item['category'] ?? 'Uncategorised' }}</span>
-                                </button>
-                            </form>
+                            {{-- TODO DISPLAY --}}
+                            <div>
+                                <form action="{{ route('todos.toggle', $todo) }}" method="POST" class="inline-block">
+                                    @csrf
+                                    <button type="submit" class="text-left font-bold {{ $todo->done ? 'line-through text-gray-400' : '' }}">
+                                        {{ $todo->todo }}
+                                    </button>
+                                </form>
+                                <span class="ml-2 px-2 py-1 rounded bg-blue-100 text-blue-800 text-xs">
+                                    {{ $todo->category }}
+                                </span>
+                            </div>
+
+                            {{-- ACTION BUTTONS --}}
                             <div class="flex space-x-2">
-                                <form action="{{ route('todos.edit', $id) }}" method="POST" class="inline">
+                                <form action="{{ route('todos.edit', $todo) }}" method="POST" class="inline">
                                     @csrf
                                     <button type="submit" class="btn btn-sm btn-secondary">Edit</button>
                                 </form>
-                                <form action="{{ route('todo.delete', $id) }}" method="POST" class="inline">
+                                <form action="{{ route('todo.delete', $todo) }}" method="POST" class="inline">
                                     @csrf
                                     <button type="submit" class="btn btn-sm btn-error">Delete</button>
                                 </form>

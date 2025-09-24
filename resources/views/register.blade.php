@@ -25,8 +25,17 @@
                         @error('password')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                         @enderror
+
+                        <label class="fieldset-label">Confirm Password</label>
+                        <input type="password" class="input" placeholder="Password" name="password_confirmation" />
+                        @error('password_confirmation')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
                         
                         <button class="btn hover:bg-blue-400 hover:text-white hover:border-2 hover:border-blue-900 shadow-lg hover:shadow-blue-900 mt-4">Register</button>
+
+
+                        
                     </fieldset>
                 </div>
             </div>
