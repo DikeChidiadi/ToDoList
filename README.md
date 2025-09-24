@@ -1,66 +1,172 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Installer or Composer not found
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+If I want to create a new project in Laravel and an error comes back, I have to download the latest Node.js for it to work
+I would need to download the .msi
+After I clicked myself past everything and it says Powershell need to be opened to download everything and it downloaded everything, I would need to close Visual Studio Code and open it again to see if it worked.
+How to see if it worked? -> ```node -v``` and ```npm -v```
 
-## About Laravel
+# How to download Tailwind CSS:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+• You would need to have Node.js downloaded.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+• Create a Project in Laravel.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+• Type this: ```npm install tailwindcss @tailwindcss/vite```
 
-## Learning Laravel
+• Under ```./resources/css/app.css``` you add this too: 
+```php
+@source "../views";
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+• DONT DELETE THE LINE THAT HAS @VITE IN IT THAT START WITH IF AND ENDS
+  WITH ENDIF!!!
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+# After downloading Tailwind CSS, downloading Daisy UI:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+• Type this into the terminal: ```npm i -D daisyui@latest```
 
-## Laravel Sponsors
+• In vite.config.js you put this into the plugin: 
+```php
+require('daisyui'),
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
+# How to download the latest tailwindcss version?
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Type this in the terminal: ```npx @tailwindcss/upgrade```
 
-## Contributing
+It will ask: ``` Ok to proceed? (y) ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+After you type ```y``` it will download the latest tailwindcss version.
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Php artisan serve problem
+If this issue shows up:
 
-## Security Vulnerabilities
+```Failed to listen on 127.0.0.1:8000```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```Failed to listen on 127.0.0.1:8001```
 
-## License
+```Failed to listen on 127.0.0.1:8002```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```Failed to listen on 127.0.0.1:8003```
+
+```Failed to listen on 127.0.0.1:8004```
+
+```Failed to listen on 127.0.0.1:8005```
+
+```Failed to listen on 127.0.0.1:8006```
+
+```Failed to listen on 127.0.0.1:8007```
+
+```Failed to listen on 127.0.0.1:8008```
+
+```Failed to listen on 127.0.0.1:8009```
+
+```Failed to listen on 127.0.0.1:8010```
+
+Here is the solution:
+
+• First of all you have to know which PHP version you are using.
+
+• Then you open the folder and follow this path: ```C:\Users\<username>\.config\herd\bin\php84\php.ini``` 
+  (php84 is the current version as of 15.03.2025)
+
+• Open the php.ini file in an editor and with STRG + F you search for ```variables_order```
+
+• Once you found it remove the ```E``` from ```EGPCS```
+
+• Then you save it!!!
+
+• Close it and also close Visual Studio Code and reopen it again
+
+• If you go to the Terminal and type: ```php artisan serve```. 
+  It should work after that.
+
+
+# Php artisan commands:
+• ```php artisan migration``` -> is for migrating the table that I created
+
+• ```php artisan make:migration``` -> erstellt eine Migration
+
+• ```php artisan make:migration create_name_table``` -> so wird eine *table* erstellt
+
+• ```php artisan make:model name -m``` -> erstellt ein Model
+
+• ```php artisan migrate``` -> is for migration commands
+
+• ```php artisan make:controller NameController``` -> is for creating a controller
+
+• ```php artisan make:controller NameController --model=Name``` -> is for creating a controller and a model
+
+Which kind of migrations exist:
+
+• ```php artisan make:migration``` → Creates a new migration file in the ```database/migrations``` directory. You can specify a name for the migration, and it will create a new file with a timestamp and the name you provided.
+
+• ```php artisan migration``` → Runs all unsettled migrations. This command will apply any new migrations that haven't been run yet.
+
+• ```php artisan migrate:fresh``` → Drops all tables and reruns all migrations. This command is useful for resetting you database to a fresh state.
+
+• ```php artisan migrate:install``` → Creates the migration repository table in your database. This table is used to keep track of which migrations have been run.
+
+• ```php artisan migrate:refresh``` → Reruns all migrations, but doesn't drop any tables that already exist. This command is similar to ```migrate:fresh```, but it won't delete any existing data.
+
+• ```php artisan migrate:reset``` → Reverts all migrations. This command will roll back all migrations and delete any tables that were created by them.
+
+• ```php artisan migrate:rollback``` → Reverts the last migration that was run. You can specify a specific number of migrations to roll back by using ```--step``` option.
+
+• ```php artisan migrate:status``` → Displays the status of all migrations. This command will show you which migrations have been run and which ones haven't. These commands are used to manage your database schema and ensure that it's in sync with your application's code.
+
+
+# How to know your current php version
+Type this inside your terminal: ```php --version``` or ```php -v```
+
+# How to make the Database from Laravel appear in HeidiSQL or any other
+
+• You have to go to migrations and type ```php artisan migrate```
+
+• After it's migrated you open HeidiSQL and the migration you created should appear
+
+# Installing MySQL
+
+• Go to the website of MySQL and click downloads
+
+• Then scroll down to the near end and click MySQL Community (GPL) Downloads
+
+• After that click on MySQL Community Server and take the current version (right now: 9.3.0 Innovation), select the Windows MSI Installer and press download
+
+• After finishing the download and clicking on it, a small window will appear. After some time the 'Choose Setup Type' will appear and I would need to choose Complete.
+
+Now comes the configuration of MySQL
+
+• MySQL Server Installations: Choose "Configure this server instance as a side-by-side installation
+
+• Type and Networking: Leave everything as it is. (If the port is already in use choose another one. With cmd and typing      netstat -a you have a view of the active networks)
+
+• Accounts and Roles: Choose the password
+
+• Windows Service: Leave everything as it is
+
+• Server File Permissions: Choose → Yes, grant full access to the user running the Windows Service bla bla bla
+
+• Sample Databases: Tick off the two boxes
+
+• Apply Configuration: Just press Execute so all will be executed
+
+* In case this error appears:
+* > SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ue4_dike_eventmanager.sessions' doesn't exist (Connection: mysql, SQL: select * from `sessions` where `id` = OOcNcv20Gt9F0KSX7kcrbn6z79Le9DGyjOhsjSmM limit 1)
+
+  You have to open ´´´app\database\migrations´´´ and migrate this table: ´´´create_users_table.php´´´
+  How to migrate → php artisan migrate
+  After you did this you open Herd and the website should be visiable.
+
+# Using MySQL Command Line Client
+• Go to START
+
+• Go to Alle and scroll to MySQL and click the MySQL Command Line Client
+
+• After the window opens type in your password
+
+• To use a database first type this: create database NameDB; and then use NameDB. With that the database gets changed.
+
+• If you want to see all your databases type: show databases;
