@@ -170,3 +170,7 @@ Now comes the configuration of MySQL
 • To use a database first type this: create database NameDB; and then use NameDB. With that the database gets changed.
 
 • If you want to see all your databases type: show databases;
+
+# How to disable the Laravel/Livewire authentication
+
+[https://stackoverflow.com/questions/41855619/how-to-remove-auth-in-laravel-php-artisan]
