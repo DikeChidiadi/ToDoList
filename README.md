@@ -174,3 +174,8 @@ Now comes the configuration of MySQL
 # How to disable the Laravel/Livewire authentication
 
 [https://stackoverflow.com/questions/41855619/how-to-remove-auth-in-laravel-php-artisan]
+
+
+# Markdown Cheat Sheet (German)
+
+[https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax]
