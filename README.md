@@ -179,3 +179,8 @@ Now comes the configuration of MySQL
 # Markdown Cheat Sheet (German)
 
 [https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax]
+
+
+# Installing Chart Js
+
+[https://github.com/icehouse-ventures/laravel-chartjs]
