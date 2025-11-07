@@ -179,8 +179,9 @@ After that I can delete this file `welcome.blade.php`.
 Then I would need to go to `sidebar.blade.php` and there is are two comments -> `<!-- Desktop User Menu -->` and `<!-- Mobile User Menu -->`. From the first comment all the way to where `</flux:header>`(<-don't delete this tag) is I have to delete.
 After that (Sicherheitshalber, wenn es auf irgendwo stolpert) open the terminal and make a migration with `php artisan migrate`.
 **Things I have to delete**:
-`auth.blade.php` which is in this directory -> `resources\views\components\layouts`.
-`auth` folder which is in this directory -> `resources\views\components\layouts`
+`auth.blade.php` which is in this directory -> `resources\views\components\layouts`
+
+`auth` folder which is in this directory -> `resources\views\components\layouts`<br>
 `auth` folder which is in this directory -> `resources\views\livewire`
 `settings` folder which is in this directory -> `resources\views\livewire`
 `settings-heading-blade.php` folder which is in this directory -> ``resources\views\partials``
