@@ -171,9 +171,22 @@ Now comes the configuration of MySQL
 
 • If you want to see all your databases type: show databases;
 
-# How to disable the Laravel/Livewire authentication
+# How to remove the Laravel/Livewire authentication
 
-[https://stackoverflow.com/questions/41855619/how-to-remove-auth-in-laravel-php-artisan]
+Laravel 5.1 -> [https://stackoverflow.com/questions/41855619/how-to-remove-auth-in-laravel-php-artisan]
+First go to web.php and change the first route from `home` to `dashboard` and from `welcome` to `dashboard` Everything below I can delete.
+After that I can delete this file `welcome.blade.php`.
+Then I would need to go to `sidebar.blade.php` and there is are two comments -> `<!-- Desktop User Menu -->` and `<!-- Mobile User Menu -->`. From the first comment all the way to where `</flux:header>`(<-don't delete this tag) is I have to delete.
+After that (Sicherheitshalber, wenn es auf irgendwo stolpert) open the terminal and make a migration with `php artisan migrate`.
+**Things I have to delete**:
+`auth.blade.php` which is in this directory -> `resources\views\components\layouts`.
+`auth` folder which is in this directory -> `resources\views\components\layouts`
+`auth` folder which is in this directory -> `resources\views\livewire`
+`settings` folder which is in this directory -> `resources\views\livewire`
+`settings-heading-blade.php` folder which is in this directory -> ``resources\views\partials``
+`auth-header.blade.php` which is in this directory -> `resources\views\components`
+`auth-session-status.blade.php` which is in this directory -> `resources\views\components`
+`Action` folder which is in this directory -> `app\Livewire`
 
 
 # Markdown Cheat Sheet (German)
