@@ -212,3 +212,13 @@ After that (Sicherheitshalber, wenn es auf irgendwo stolpert) open the terminal 
 # Installing Chart Js
 
 [https://github.com/icehouse-ventures/laravel-chartjs]
+
+First you put this in your terminal:
+```terminal
+composer require icehouse-ventures/laravel-chartjs
+```
+and then this
+
+```terminal
+npm install chart.js
+```
