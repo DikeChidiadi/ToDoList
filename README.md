@@ -238,7 +238,7 @@ After that (Sicherheitshalber, wenn es auf irgendwo stolpert) open the terminal 
 [https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax]
 
 
-# Installing Chart Js
+# Installing Chart.js
 
 [https://github.com/icehouse-ventures/laravel-chartjs]
 
